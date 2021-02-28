@@ -4,5 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#9B59B6"
     android:orientation="vertical"
-    tools:context=".MainActivity"/>
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/titleRollDice"
+        style="@style/titleStyle" />
+
+    <TextView
+        android:id="@+id/diceResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#FFC107"
+        android:textSize="48sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/editDiceSides"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/diceSides" />
+
+    <Button
+        android:id="@+id/btnRollDice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="roll"
+        android:text="Roll!" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

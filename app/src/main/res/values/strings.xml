@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SRPG</string>
+    <string name="titleRollDice">Roll a dice</string>
+    <string name="diceSides">Sides on dice</string>
 </resources>
