@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.squareup.seismic.ShakeDetector;
 
 import br.com.rafaelfaustini.srpg.model.Dice;
+import br.com.rafaelfaustini.srpg.util.LoggingUtil;
 
 public class MainActivity extends AppCompatActivity implements ShakeDetector.Listener{
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements ShakeDetector.Lis
             result.setText(resultText);
             result.setVisibility(1);
         } catch (Exception e){
-
+            LoggingUtil.error("DiceRoll", e, getApplicationContext());
         }
     }
 

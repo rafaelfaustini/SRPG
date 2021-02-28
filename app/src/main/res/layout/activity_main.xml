@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#9B59B6"
+    android:background="@color/background"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
+        style="@style/titleStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/titleRollDice"
-        style="@style/titleStyle" />
+        android:textColor="@color/textColor" />
 
     <TextView
         android:id="@+id/diceResult"
@@ -24,22 +25,31 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="#FFC107"
-        android:textSize="48sp"
+        android:textSize="64sp"
         android:visibility="gone" />
 
-    <EditText
-        android:id="@+id/editDiceSides"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/diceSides" />
+        android:hint="@string/diceFaces">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editDiceSides"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnRollDice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="none"
         android:onClick="roll"
-        android:text="Roll!" />
+        android:text="@string/btnRollDice"
+        android:textSize="18sp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
