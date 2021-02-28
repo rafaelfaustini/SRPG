@@ -2,10 +2,9 @@ package br.com.rafaelfaustini.srpg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.hardware.SensorListener;
+import android.animation.ValueAnimator;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,15 +32,26 @@ public class MainActivity extends AppCompatActivity implements ShakeDetector.Lis
             int faces = Integer.parseInt(editSides.getText().toString());
             Dice dice = new Dice(faces);
             TextView result = findViewById(R.id.diceResult);
-            String resultText = String.valueOf(dice.roll());
-            result.setText(resultText);
             result.setVisibility(1);
+            startCountAnimation(result, dice.roll());
         } catch (Exception e){
             LoggingUtil.error("DiceRoll", e, getApplicationContext());
         }
     }
 
+    private void startCountAnimation(TextView result, int value) {
+        ValueAnimator animator = ValueAnimator.ofInt(1, value);
+        animator.setDuration(500);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                result.setText(animation.getAnimatedValue().toString());
+            }
+        });
+        animator.start();
+    }
+
     @Override public void hearShake() {
         roll(this.findViewById(android.R.id.content).getRootView());
     }
+
 }
