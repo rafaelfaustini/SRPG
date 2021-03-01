@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,7 +24,6 @@ class DiceTest {
     void getFaces() {
         Dice d = new Dice(5);
         assertEquals(5, d.getFaces());
-        d = null;
         d = new Dice(2);
         assertEquals(2, d.getFaces());
     }
