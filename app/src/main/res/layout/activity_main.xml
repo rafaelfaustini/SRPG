@@ -4,5 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".MainActivity"/>
+    android:padding="10dp"
+    tools:context=".DiceActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/titleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/titleRollDice"
+        android:textColor="@color/textColor" />
+
+    <TextView
+        android:id="@+id/diceResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#FFC107"
+        android:textSize="64sp"
+        android:visibility="gone" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/diceFaces">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editDiceSides"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnRollDice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="none"
+        android:onClick="roll"
+        android:text="@string/btnRollDice"
+        android:textSize="18sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
