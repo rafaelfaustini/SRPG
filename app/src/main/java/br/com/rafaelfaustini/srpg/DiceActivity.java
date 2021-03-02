@@ -14,7 +14,7 @@ import com.squareup.seismic.ShakeDetector;
 import br.com.rafaelfaustini.srpg.model.Dice;
 import br.com.rafaelfaustini.srpg.util.LoggingUtil;
 
-public class MainActivity extends AppCompatActivity implements ShakeDetector.Listener{
+public class DiceActivity extends AppCompatActivity implements ShakeDetector.Listener{
 
 
     @Override
