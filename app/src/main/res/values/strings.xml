@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SRPG</string>
+    <string name="titleRollDice">Roll a dice</string>
+    <string name="diceFaces">Number of faces</string>
+    <string name="errorMessage">There was an internal error, please try again...</string>
+    <string name="btnRollDice">Roll!!</string>
 </resources>
