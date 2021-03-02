@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -19,6 +21,10 @@ jobs:
 
       - name: Build debug apk
         run: ./gradlew clean assembleDebug
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
       - name: Create release and upload apk
         uses: underwindfall/create-release-with-debugapk@v2.0.0
