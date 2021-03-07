@@ -1,4 +1,4 @@
-package br.com.rafaelfaustini.srpg.model;
+package br.com.rafaelfaustini.srpg.entity;
 import java.lang.Math;
 
 public class Dice {

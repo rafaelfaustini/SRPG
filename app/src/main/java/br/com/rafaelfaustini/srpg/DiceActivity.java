@@ -11,7 +11,11 @@ import android.widget.TextView;
 
 import com.squareup.seismic.ShakeDetector;
 
-import br.com.rafaelfaustini.srpg.model.Dice;
+import java.util.List;
+
+import br.com.rafaelfaustini.srpg.entity.Campaign;
+import br.com.rafaelfaustini.srpg.entity.Dice;
+import br.com.rafaelfaustini.srpg.service.CampaignService;
 import br.com.rafaelfaustini.srpg.util.LoggingUtil;
 
 public class DiceActivity extends AppCompatActivity implements ShakeDetector.Listener{

@@ -17,7 +17,7 @@ public class SqliteConnection extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("");
+        db.execSQL("CREATE TABLE CAMPAIGN (ID INTEGER PRIMARY KEY, NAME TEXT, STORY TEXT)");
     }
 
     @Override

@@ -1,4 +1,4 @@
-package br.com.rafaelfaustini.srpg.model;
+package br.com.rafaelfaustini.srpg.entity;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
