@@ -57,6 +57,7 @@ public class CampaignRecyclerListView {
 
             switch (direction){
                 case ItemTouchHelper.LEFT:
+                case ItemTouchHelper.RIGHT:
                     Campaign deletedCampaign = campaigns.get(position);
                     campaigns.remove(position);
                     adapter.notifyItemRemoved(position);
@@ -79,11 +80,9 @@ public class CampaignRecyclerListView {
                     });
                     snack.show();
                     break;
-                case ItemTouchHelper.RIGHT:
-
-                    break;
             }
         }
+
     };
 
 
