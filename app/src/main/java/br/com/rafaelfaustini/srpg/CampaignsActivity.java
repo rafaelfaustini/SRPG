@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -31,12 +35,24 @@ public class CampaignsActivity extends AppCompatActivity {
         adapter = new CampaignRecyclerAdapter(CampaignsActivity.this, campaigns);
         campaignList.setAdapter(adapter);
         campaignList.setLayoutManager(new LinearLayoutManager(CampaignsActivity.this));
-
+        onAdd();
     }
+
 
     private List<Campaign> retrieveCampaigns(){
         CampaignService service = new CampaignService(getApplicationContext());
         return service.getAll();
+    }
+
+    private void onAdd(){
+        FloatingActionButton addCampaign = findViewById(R.id.btnCreateCampaign);
+        addCampaign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(CampaignsActivity.this, ManageCampaignActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

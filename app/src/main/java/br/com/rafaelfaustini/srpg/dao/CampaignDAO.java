@@ -38,7 +38,7 @@ public class CampaignDAO implements IDao <Integer, Campaign> {
     @Override
     public List<Campaign> getAll() throws Exception {
         List<Campaign> campaigns = new ArrayList<Campaign>();
-        String sql = "SELECT id, name, story from campaign";
+        String sql = "SELECT id, name, story from campaign ORDER BY ID DESC";
         Cursor cursor = db.rawQuery(sql, null);
         while (cursor.moveToNext()) {
             Campaign campaign = new Campaign(cursor.getInt(0), cursor.getString(1), cursor.getString(2));

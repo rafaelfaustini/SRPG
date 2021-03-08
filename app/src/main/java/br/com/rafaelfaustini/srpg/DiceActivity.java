@@ -11,11 +11,7 @@ import android.widget.TextView;
 
 import com.squareup.seismic.ShakeDetector;
 
-import java.util.List;
-
-import br.com.rafaelfaustini.srpg.entity.Campaign;
 import br.com.rafaelfaustini.srpg.entity.Dice;
-import br.com.rafaelfaustini.srpg.service.CampaignService;
 import br.com.rafaelfaustini.srpg.util.LoggingUtil;
 
 public class DiceActivity extends AppCompatActivity implements ShakeDetector.Listener{
@@ -27,12 +23,12 @@ public class DiceActivity extends AppCompatActivity implements ShakeDetector.Lis
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         ShakeDetector sd = new ShakeDetector(this);
         sd.start(sensorManager);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dice);
     }
 
     public void roll(View view){
         try {
-            EditText editSides = findViewById(R.id.editDiceSides);
+            EditText editSides = findViewById(R.id.editCampaignStory);
             int faces = Integer.parseInt(editSides.getText().toString());
             Dice dice = new Dice(faces);
             TextView result = findViewById(R.id.diceResult);
