@@ -33,7 +33,7 @@
                 android:text="TextView"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/campaignId"
-                tools:layout_editor_absoluteY="0dp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/campaignDesc"
