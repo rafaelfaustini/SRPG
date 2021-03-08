@@ -1,7 +1,6 @@
 package br.com.rafaelfaustini.srpg;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -15,6 +14,7 @@ import java.util.List;
 import br.com.rafaelfaustini.srpg.adapters.CampaignRecyclerAdapter;
 import br.com.rafaelfaustini.srpg.entity.Campaign;
 import br.com.rafaelfaustini.srpg.service.CampaignService;
+import br.com.rafaelfaustini.srpg.view.CampaignRecyclerListView;
 
 public class CampaignsActivity extends AppCompatActivity {
     private List<Campaign> campaigns;
@@ -32,10 +32,10 @@ public class CampaignsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_campaign);
         campaigns = retrieveCampaigns();
         campaignList = findViewById(R.id.campaignList);
-        adapter = new CampaignRecyclerAdapter(CampaignsActivity.this, campaigns);
-        campaignList.setAdapter(adapter);
-        campaignList.setLayoutManager(new LinearLayoutManager(CampaignsActivity.this));
+        CampaignRecyclerListView list = new CampaignRecyclerListView(CampaignsActivity.this, campaignList);
+        list.bindContent(campaigns);
         onAdd();
+
     }
 
 
